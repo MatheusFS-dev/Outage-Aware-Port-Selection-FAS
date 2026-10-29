@@ -1,0 +1,3 @@
+dataset,scope,regime_index,selection_mode,target_outage_probability,snr_linear,snr_db,threshold_over_snr,threshold_linear,n_samples,n_outage_samples,empirical_outage_probability,observed_port_count,observed_indices
+all_regimes_average,global,-1,ideal,0.03,1.0,0.0,0.7072721746351037,0.7072721746351037,14000000,420000,0.03,7,"0,16,33,49,66,82,99"
+all_regimes_average,global,-1,observed,0.03,1.0,0.0,0.6839942165783474,0.6839942165783474,14000000,420000,0.03,7,"0,16,33,49,66,82,99"

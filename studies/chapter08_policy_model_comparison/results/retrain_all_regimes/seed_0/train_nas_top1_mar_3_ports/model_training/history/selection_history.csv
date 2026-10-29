@@ -1,0 +1,2 @@
+selected_epoch,best_val_loss,model_only_op,observed_only_op,distinct_selected_ports
+65,3.665203809738159,0.3538,0.5039,94

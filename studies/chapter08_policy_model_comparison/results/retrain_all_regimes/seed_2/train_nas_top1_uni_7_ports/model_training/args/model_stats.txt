@@ -1,0 +1,8 @@
+policy=uni
+budget=7
+train_seed=2
+parameters=15756
+epochs_completed=100
+selected_epoch=100
+best_val_loss=2.4040286540985107
+int8_tflite_size_bytes=158312

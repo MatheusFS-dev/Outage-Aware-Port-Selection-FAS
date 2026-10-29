@@ -1,0 +1,2 @@
+artifact_type,rank,trial_id,split,regime,num_samples,n_observed_ports,ideal_op,ideal_n_outage_samples,ideal_op_std,observed_op,observed_n_outage_samples,observed_op_std,model_plus_observed_op,model_plus_observed_n_outage_samples,model_plus_observed_op_std,model_plus_observed_op_gap_from_ideal_pct,model_only_op,model_only_n_outage_samples,model_only_op_std,model_only_op_gap_from_ideal_pct
+fp32_keras,1,12,val,kappa0_mu1_m50,200000,4,0.20978,41956,0.40715150939177425,0.267755,53551,0.44278918231478964,0.22993,45986,0.4207875890517685,2.015,0.22993,45986,0.4207875890517685,2.015

@@ -1,0 +1,6 @@
+script_prefix,regime,configured_ports,num_samples,ideal_op,ideal_n_outage_samples,Ideal_good_samples,observed_op,observed_n_outage_samples,Observed_good_samples,model_plus_observed_op,model_plus_observed_n_outage_samples,Model + Observed_good_samples,model_only_op,model_only_n_outage_samples,Model Only_good_samples
+nas_ptq_mobv3_all_regimes_,kappa5_mu2_m50,3,200000,0.03449,6898,193102,0.276155,55231,144769,0.134115,26823,173177,0.144805,28961,171039
+nas_ptq_mobv3_all_regimes_,kappa5_mu2_m50,4,200000,0.03449,6898,193102,0.07794,15588,184412,0.050955,10191,189809,0.058335,11667,188333
+nas_ptq_mobv3_all_regimes_,kappa5_mu2_m50,5,200000,0.03449,6898,193102,0.06756,13512,186488,0.04409,8818,191182,0.048755,9751,190249
+nas_ptq_mobv3_all_regimes_,kappa5_mu2_m50,6,200000,0.03449,6898,193102,0.046885,9377,190623,0.038015,7603,192397,0.041865,8373,191627
+nas_ptq_mobv3_all_regimes_,kappa5_mu2_m50,7,200000,0.03449,6898,193102,0.043385,8677,191323,0.036485,7297,192703,0.040885,8177,191823

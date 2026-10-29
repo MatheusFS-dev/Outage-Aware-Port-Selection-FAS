@@ -1,0 +1,2 @@
+parameter,conservative_min,conservative_max,aggressive_min,aggressive_max,best_median,all_trials_count,best_trials_count
+params_cnn1d_filters_2,48.0,80.0,35.2,92.8,64.0,15,3

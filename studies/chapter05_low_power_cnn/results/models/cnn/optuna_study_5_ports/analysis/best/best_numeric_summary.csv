@@ -1,0 +1,23 @@
+Parameter,Mean,Std,Median,Min (25% quantile),Max (75% quantile),Min (5% quantile),Max (95% quantile)
+params_batch_size,128,0,128,128,128,128,128
+params_cnn1d_filters_0,483.2,41.17,496,480,512,412.8,512
+params_cnn1d_filters_1,160,0,160,160,160,160,160
+params_cnn1d_filters_2,No data,No data,No data,No data,No data,No data,No data
+params_cnn1d_filters_3,No data,No data,No data,No data,No data,No data,No data
+params_cnn1d_kernel_size_0,4.7,0.67,5,5,5,3.45,5
+params_cnn1d_kernel_size_1,3,2.83,3,2,4,1.2,4.8
+params_cnn1d_kernel_size_2,No data,No data,No data,No data,No data,No data,No data
+params_cnn1d_kernel_size_3,No data,No data,No data,No data,No data,No data,No data
+params_cnn1d_pool_size_0,3.6,0.84,4,4,4,2,4
+params_cnn1d_pool_size_1,2,0,2,2,2,2,2
+params_cnn1d_pool_size_2,No data,No data,No data,No data,No data,No data,No data
+params_cnn1d_pool_size_3,No data,No data,No data,No data,No data,No data,No data
+params_dense_1_dropout,0.3,,0.3,0.3,0.3,0.3,0.3
+params_dense_1_units,128,,128,128,128,128,128
+params_dense_2_dropout,0,,0,0,0,0,0
+params_dense_2_units,512,,512,512,512,512,512
+params_dense_3_dropout,No data,No data,No data,No data,No data,No data,No data
+params_dense_3_units,No data,No data,No data,No data,No data,No data,No data
+params_learning_rate,5.84e-03,3.01e-03,6.95e-03,5.11e-03,7.84e-03,6.10e-04,8.61e-03
+params_num_dense_layers,0.2,0.63,0,0,0,0,1.1
+params_num_layers,1.2,0.42,1,1,1,1,2

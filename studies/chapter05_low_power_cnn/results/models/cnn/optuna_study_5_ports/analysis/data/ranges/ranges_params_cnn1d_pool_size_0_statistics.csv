@@ -1,0 +1,2 @@
+parameter,conservative_min,conservative_max,aggressive_min,aggressive_max,best_median,all_trials_count,best_trials_count
+params_cnn1d_pool_size_0,4.0,4.0,2.0,4.0,4.0,53,10

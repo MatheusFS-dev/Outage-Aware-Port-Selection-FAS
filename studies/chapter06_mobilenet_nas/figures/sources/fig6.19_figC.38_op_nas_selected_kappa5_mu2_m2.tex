@@ -1,0 +1,94 @@
+% Generated PDF baseline(s):
+%   ../fig6.19_op_nas_selected_kappa5_mu2_m2.pdf
+%   ../figC.38_op_nas_selected_kappa5_mu2_m2.pdf
+% ============================================================================
+% EDITABLE FIGURE PARAMETERS
+% The document-class options below set the base font and cropped-page margin.
+% Example: change 12pt to 11pt for all inherited text, or border=2pt to
+% border=4pt for a larger white margin. Keep the current values to reproduce
+% the dissertation figure exactly.
+%
+% Colors declared with \definecolor and pre-existing \tikzset blocks are also
+% centralized appearance constants. Edit their values in this preamble only.
+% ============================================================================
+\documentclass[12pt,tikz,border=2pt]{standalone}
+
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{plotmarks}
+
+
+% --- Centralized render constants used by the figure body ---
+% Axis constants: dimensions, limits, ticks, labels, grids, and legend placement.
+% Example: inside an axis macro, change width=13.2cm to width=14cm or font=\normalsize to font=\small.
+\long\def\FluidraFigureAxisA{\begin{axis}[
+    width=13.2cm,
+    height=9.6cm,
+    xmin=2.75,
+    xmax=7.25,
+    xtick={3,4,5,6,7},
+    ymode=log,
+    log basis y=10,
+    % WCNPS-style decade margins leave room for the in-axis annotation boxes.
+    ymin=0.8e-1,
+    ymax=1.25e0,
+    ytickten={-1,0},
+    xlabel={$N$},
+    ylabel={$P_{\mathrm{out}}$},
+    axis lines=box,
+    tick align=inside,
+    minor tick num=9,
+    tick style={black,line width=0.35pt},
+    tick label style={font=\normalsize},
+    label style={font=\normalsize},
+    grid=major,
+    major grid style={draw=gray!45,solid,line width=0.35pt},
+    legend style={at={(0.5,1.02)},anchor=south,draw=black,fill=white,
+        font=\normalsize,legend columns=4,column sep=5pt,
+        legend cell align={left},inner sep=3pt,row sep=-1pt}
+]}
+
+% Plot constants: colors, line patterns, line widths, markers, and error bars.
+% Example: inside a plot macro, change line width=1.1pt to 1.5pt or mark size=2.6pt to 3pt.
+\long\def\FluidraFigurePlotA{\addplot[black,solid,line width=0.9pt]}
+\long\def\FluidraFigurePlotB{\addplot[black,solid,line width=0.9pt,mark=asterisk,mark size=2.4pt]}
+\long\def\FluidraFigurePlotC{\addplot[black,solid,line width=0.9pt,mark=pentagon,mark size=2.2pt,
+    mark options={solid,fill=white}]}
+\long\def\FluidraFigurePlotD{\addplot[black,dashed,line width=0.9pt,mark=square,mark size=2.0pt,
+    mark options={solid,fill=white}]}
+
+% Text-node constants: font, padding, border, fill, anchor, and relative placement.
+% Example: inside a node macro, change inner sep=3pt to 4pt or font=\normalsize to font=\small.
+\long\def\FluidraFigureNodeA{\node[anchor=north east,draw=black,fill=white,inner sep=3pt,font=\normalsize]}
+
+% Position constants: absolute or axis-relative locations for annotations and paths.
+% \FluidraFigurePositionA controls one location. Example: adjust either coordinate below to move it.
+\def\FluidraFigurePositionA{rel axis cs:0.98,0.98}
+\begin{document}
+\begin{tikzpicture}
+\FluidraFigureAxisA
+\FluidraFigureNodeA
+    at (\FluidraFigurePositionA) {$\kappa=5$, $\mu=2$, $m=2$};
+\FluidraFigurePlotA
+    table[col sep=comma,x=observed_ports,y=ideal_op]
+    {op_nas_selected_kappa5_mu2_m2.csv};
+\addlegendentry{Ideal}
+\FluidraFigurePlotB
+    table[col sep=comma,x=observed_ports,y=observed_only_op]
+    {op_nas_selected_kappa5_mu2_m2.csv};
+\addlegendentry{Observed only}
+\FluidraFigurePlotC
+    table[col sep=comma,x=observed_ports,y=fp32_model_op]
+    {op_nas_selected_kappa5_mu2_m2.csv};
+\addlegendentry{FP32}
+\FluidraFigurePlotD
+    table[col sep=comma,x=observed_ports,y=int8_model_op]
+    {op_nas_selected_kappa5_mu2_m2.csv};
+\addlegendentry{INT8}
+\end{axis}
+\end{tikzpicture}
+\end{document}

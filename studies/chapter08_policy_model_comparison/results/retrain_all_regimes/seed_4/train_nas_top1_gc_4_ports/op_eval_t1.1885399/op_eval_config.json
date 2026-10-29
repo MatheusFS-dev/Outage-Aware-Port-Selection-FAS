@@ -1,0 +1,37 @@
+{
+  "batch_size": 4096,
+  "data_seed": 0,
+  "enabled_split_names": [
+    "test"
+  ],
+  "model_path": "/home/matheus/src/FluiDRA/src/mobilenet/keras/split_60_20_20/results/retrain_all_regimes/seed_4/train_nas_top1_gc_4_ports/model_training/model/model.keras",
+  "observed_indices": [
+    0,
+    31,
+    67,
+    99
+  ],
+  "regime_labels": [
+    "kappa0_mu1_m0",
+    "kappa0_mu1_m2",
+    "kappa0_mu1_m50",
+    "kappa0_mu2_m50",
+    "kappa0_mu5_m50",
+    "kappa5_mu1_m0",
+    "kappa5_mu1_m2",
+    "kappa5_mu1_m50",
+    "kappa5_mu2_m0",
+    "kappa5_mu2_m2",
+    "kappa5_mu2_m50",
+    "kappa5_mu5_m0",
+    "kappa5_mu5_m2",
+    "kappa5_mu5_m50"
+  ],
+  "retrain_run_dir": "/home/matheus/src/FluiDRA/src/mobilenet/keras/split_60_20_20/results/retrain_all_regimes/seed_4/train_nas_top1_gc_4_ports",
+  "scaler_x_path": "/home/matheus/src/FluiDRA/src/mobilenet/keras/split_60_20_20/results/retrain_all_regimes/seed_4/train_nas_top1_gc_4_ports/model_training/scaler/scaler_X.pkl",
+  "scaler_y_path": "/home/matheus/src/FluiDRA/src/mobilenet/keras/split_60_20_20/results/retrain_all_regimes/seed_4/train_nas_top1_gc_4_ports/model_training/scaler/scaler_y.pkl",
+  "snr_linear": 1.0,
+  "tflite_batch_size": 256,
+  "tflite_model_path": "/home/matheus/src/FluiDRA/src/mobilenet/keras/split_60_20_20/results/retrain_all_regimes/seed_4/train_nas_top1_gc_4_ports/model_training/tflite/model_int8.tflite",
+  "threshold": 1.1885398626327515
+}

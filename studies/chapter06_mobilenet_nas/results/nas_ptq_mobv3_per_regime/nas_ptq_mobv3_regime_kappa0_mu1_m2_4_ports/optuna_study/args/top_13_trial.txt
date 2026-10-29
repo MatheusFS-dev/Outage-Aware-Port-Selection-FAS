@@ -1,0 +1,126 @@
+Rank: 13
+Trial ID: 49
+Value: [2.3601×10^-1, 3.2768×10^4]
+Convergence Epoch: 26
+
+Number of Parameters: 22188 parameters (22.19 K)
+Model Size: 88752 B (86.67 KB)
+FLOPs (batch size: 1): 523368 FLOPs (523.37 K)
+
+GPU Inference:
+    - System Memory: N/A B (N/A)
+    - GPU Memory: N/A B (N/A)
+    - GPU Usage: N/A
+    - GPU Power: N/A W
+    - Inference Time (avg/peak): 7.2874×10^-4 s / 8.7176×10^-4 s
+    - Energy Consumption: N/A J
+
+Model Summary:
+Model: "mobv3_alpha02_gn_safe_selector_protocol"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Layer (type)                ┃ Output Shape          ┃    Param # ┃ Trai… ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│ sparse_port_image           │ (None, 32, 32, 3)     │          0 │   -   │
+│ (InputLayer)                │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│ sparse_image_observed_valu… │ (None, 4)             │          0 │   -   │
+│ (SparseImageObservedValues) │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│ nas_ptq_mobv3_gn_safe_sele… │ (None, 100)           │     22,188 │   Y   │
+│ (Functional)                │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └ observed_snr           │ (None, 4)             │          0 │   -   │
+│ (InputLayer)                │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └ expanded_port_image    │ (None, 32, 32, 3)     │          0 │   -   │
+│ (ExpandedPortImage)         │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └ nas_stem_conv (Conv2D) │ (None, 16, 16, 16)    │        432 │   Y   │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └ nas_stem_gn            │ (None, 16, 16, 16)    │         32 │   Y   │
+│ (GroupNormalization)        │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └ nas_stem_activation    │ (None, 16, 16, 16)    │          0 │   -   │
+│ (Activation)                │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └ v3_block_0_expand      │ (None, 16, 16, 16)    │        256 │   Y   │
+│ (Conv2D)                    │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └ v3_block_0_expand_gn   │ (None, 16, 16, 16)    │         32 │   Y   │
+│ (GroupNormalization)        │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └                        │ (None, 16, 16, 16)    │          0 │   -   │
+│ v3_block_0_expand_activati… │                       │            │       │
+│ (Activation)                │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └ v3_block_0_depthwise   │ (None, 8, 8, 16)      │        144 │   Y   │
+│ (DepthwiseConv2D)           │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └                        │ (None, 8, 8, 16)      │         32 │   Y   │
+│ v3_block_0_depthwise_gn     │                       │            │       │
+│ (GroupNormalization)        │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └                        │ (None, 8, 8, 16)      │          0 │   -   │
+│ v3_block_0_depthwise_activ… │                       │            │       │
+│ (Activation)                │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └ v3_block_0_se_pool     │ (None, 1, 1, 16)      │          0 │   -   │
+│ (GlobalAveragePooling2D)    │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └ v3_block_0_se_reduce   │ (None, 1, 1, 8)       │        136 │   Y   │
+│ (Conv2D)                    │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └ v3_block_0_se_expand   │ (None, 1, 1, 16)      │        144 │   Y   │
+│ (Conv2D)                    │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └ v3_block_0_se_scale    │ (None, 8, 8, 16)      │          0 │   -   │
+│ (Multiply)                  │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └ v3_block_0_project     │ (None, 8, 8, 16)      │        256 │   Y   │
+│ (Conv2D)                    │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └ v3_block_0_project_gn  │ (None, 8, 8, 16)      │         32 │   Y   │
+│ (GroupNormalization)        │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └ global_average_pool    │ (None, 16)            │          0 │   -   │
+│ (GlobalAveragePooling2D)    │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └ selector_dense_0       │ (None, 176)           │      2,992 │   Y   │
+│ (Dense)                     │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └ exploration_logits     │ (None, 100)           │     17,700 │   Y   │
+│ (Dense)                     │                       │            │       │
+├─────────────────────────────┼───────────────────────┼────────────┼───────┤
+│    └ safe_decision_scores   │ (None, 100)           │          0 │   -   │
+│ (SafeDecisionScores)        │                       │            │       │
+└─────────────────────────────┴───────────────────────┴────────────┴───────┘
+ Total params: 22,188 (86.67 KB)
+ Trainable params: 22,188 (86.67 KB)
+ Non-trainable params: 0 (0.00 B)
+
+best_not_qt_val_model_op: 0.23153
+best_qt_val_model_op: 0.23601
+quantization_op_degradation: 0.004479999999999984
+not_qt_distinct_selected_ports: 70.0
+not_qt_permutation_change_rate: 0.9218666666666667
+qt_distinct_selected_ports: 74.0
+qt_permutation_change_rate: 0.9229333333333333
+qt_model_size_bytes: 93736
+pretrain_ram_peak_bytes: 32768
+trained_ram_peak_bytes: 32768
+ram_budget_violated: False
+violating_ram_peak_bytes: nan
+tflite_model_size: 93736 B (91.539 KiB)
+tflite_peak_ram_bytes: 32768 B (32.000 KiB)
+tflite_tensor_count: 163 tensors
+tflite_operator_count: 114 operators
+tflite_inference_latency_mean: 3.4106×10^-4 s
+tflite_inference_latency_peak: 3.5409×10^-4 s
+Sampler: TPESampler
+
+Trial hyperparameters:
+  alpha: 0.9
+  truncation_block_name: v3_block_0_project_gn
+  head_depth: 1
+  head_width: 176
+  learning_rate: 0.0004672013793729249

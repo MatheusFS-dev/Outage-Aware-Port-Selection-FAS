@@ -1,0 +1,203 @@
+% Generated PDF baseline(s):
+%   ../fig6.13.pdf
+% ============================================================================
+% EDITABLE FIGURE PARAMETERS
+% The document-class options below set the base font and cropped-page margin.
+% Example: change 12pt to 11pt for all inherited text, or border=2pt to
+% border=4pt for a larger white margin. Keep the current values to reproduce
+% the dissertation figure exactly.
+%
+% Colors declared with \definecolor and pre-existing \tikzset blocks are also
+% centralized appearance constants. Edit their values in this preamble only.
+% ============================================================================
+\documentclass[12pt,tikz,border=2pt]{standalone}
+
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+
+\usepackage{pgfplots}
+\usepackage{times}
+\usetikzlibrary{arrows.meta}
+
+\pgfplotsset{compat=1.18}
+
+\definecolor{budgetthree}{HTML}{0072B2}
+\definecolor{budgetfour}{HTML}{D55E00}
+\definecolor{budgetfive}{HTML}{009E73}
+\definecolor{budgetsix}{HTML}{CC79A7}
+\definecolor{budgetseven}{HTML}{E69F00}
+
+
+% --- Centralized render constants used by the figure body ---
+% Axis constants: dimensions, limits, ticks, labels, grids, and legend placement.
+% Example: inside an axis macro, change width=13.2cm to width=14cm or font=\normalsize to font=\small.
+\long\def\FluidraFigureAxisA{\begin{axis}[
+    width=15.2cm,
+    height=8.6cm,
+    xmin=1,
+    xmax=100,
+    ymin=0.305,
+    ymax=0.405,
+    xlabel={Trial number},
+    ylabel={Best INT8 validation model-only OP},
+    scaled y ticks=false,
+    ytick={0.31,0.33,0.35,0.37,0.39},
+    axis x line*=bottom,
+    axis y line*=left,
+    tick align=outside,
+    tick label style={font=\normalsize},
+    label style={font=\normalsize},
+    grid=both,
+    set layers=standard,
+    major grid style={draw=gray!28,dashed,line width=0.3pt},
+    minor grid style={draw=gray!14,dashed,line width=0.2pt},
+    legend style={
+        at={(0.5,1.02)},
+        anchor=south,
+        draw=black,
+        fill=white,
+        line width=0.6pt,
+        font=\normalsize,
+        legend columns=5,
+        inner sep=3pt,
+        cells={anchor=west}
+    },
+    unbounded coords=discard,
+    filter discard warning=false
+]}
+
+% Plot constants: colors, line patterns, line widths, markers, and error bars.
+% Example: inside a plot macro, change line width=1.1pt to 1.5pt or mark size=2.6pt to 3pt.
+\long\def\FluidraFigurePlotA{\addplot[
+    budgetthree,
+    dash pattern=on 6pt off 3pt,
+    line width=2.475pt,
+    mark=none
+]}
+\long\def\FluidraFigurePlotB{\addplot[
+    budgetfour,
+    dash pattern=on 6pt off 3pt,
+    line width=2.475pt,
+    mark=none
+]}
+\long\def\FluidraFigurePlotC{\addplot[
+    budgetfive,
+    dash pattern=on 6pt off 3pt,
+    line width=2.475pt,
+    mark=none
+]}
+\long\def\FluidraFigurePlotD{\addplot[
+    budgetsix,
+    dash pattern=on 6pt off 3pt,
+    line width=2.7pt,
+    mark=none
+]}
+\long\def\FluidraFigurePlotE{\addplot[
+    budgetseven,
+    dash pattern=on 6pt off 3pt,
+    line width=2.475pt,
+    mark=none
+]}
+
+% Text-node constants: font, padding, border, fill, anchor, and relative placement.
+% Example: inside a node macro, change inner sep=3pt to 4pt or font=\normalsize to font=\small.
+\long\def\FluidraFigureNodeA{\node[budgetseven,font=\normalsize,fill=white,inner sep=1pt]}
+\long\def\FluidraFigureNodeB{\node[budgetfour,font=\normalsize,fill=white,inner sep=1pt]}
+\long\def\FluidraFigureNodeC{\node[budgetfive,font=\normalsize,fill=white,inner sep=1pt]}
+\long\def\FluidraFigureNodeD{\node[budgetthree,font=\normalsize,fill=white,inner sep=1pt]}
+\long\def\FluidraFigureNodeE{\node[budgetsix,font=\normalsize,fill=white,inner sep=1pt]}
+
+% Path constants: arrow shape, color, dash pattern, and stroke width.
+% Example: inside a path macro, change line width=0.8pt to 1pt or >=Latex to >=Stealth.
+\long\def\FluidraFigurePathA{\draw[budgetseven,line width=2.025pt,-{Stealth[length=2.3mm,width=1.8mm]}]}
+\long\def\FluidraFigurePathB{\draw[budgetfour,line width=2.025pt,-{Stealth[length=2.3mm,width=1.8mm]}]}
+\long\def\FluidraFigurePathC{\draw[budgetfive,line width=2.025pt,-{Stealth[length=2.3mm,width=1.8mm]}]}
+\long\def\FluidraFigurePathD{\draw[budgetthree,line width=2.025pt,-{Stealth[length=2.3mm,width=1.8mm]}]}
+\long\def\FluidraFigurePathE{\draw[budgetsix,line width=2.025pt,-{Stealth[length=2.3mm,width=1.8mm]}]}
+
+% Position constants: absolute or axis-relative locations for annotations and paths.
+% \FluidraFigurePositionA controls one location. Example: adjust either coordinate below to move it.
+\def\FluidraFigurePositionA{axis cs:39,0.347}
+% \FluidraFigurePositionB controls one location. Example: adjust either coordinate below to move it.
+\def\FluidraFigurePositionB{axis cs:39,0.307799285714}
+% \FluidraFigurePositionC controls one location. Example: adjust either coordinate below to move it.
+\def\FluidraFigurePositionC{axis cs:39,0.350}
+% \FluidraFigurePositionD controls one location. Example: adjust either coordinate below to move it.
+\def\FluidraFigurePositionD{axis cs:95,0.337}
+% \FluidraFigurePositionE controls one location. Example: adjust either coordinate below to move it.
+\def\FluidraFigurePositionE{axis cs:95,0.323715714286}
+% \FluidraFigurePositionF controls one location. Example: adjust either coordinate below to move it.
+\def\FluidraFigurePositionF{axis cs:92,0.340}
+% \FluidraFigurePositionG controls one location. Example: adjust either coordinate below to move it.
+\def\FluidraFigurePositionG{axis cs:47,0.365}
+% \FluidraFigurePositionH controls one location. Example: adjust either coordinate below to move it.
+\def\FluidraFigurePositionH{axis cs:47,0.314229642857}
+% \FluidraFigurePositionI controls one location. Example: adjust either coordinate below to move it.
+\def\FluidraFigurePositionI{axis cs:47,0.368}
+% \FluidraFigurePositionJ controls one location. Example: adjust either coordinate below to move it.
+\def\FluidraFigurePositionJ{axis cs:65,0.395}
+% \FluidraFigurePositionK controls one location. Example: adjust either coordinate below to move it.
+\def\FluidraFigurePositionK{axis cs:65,0.372158571429}
+% \FluidraFigurePositionL controls one location. Example: adjust either coordinate below to move it.
+\def\FluidraFigurePositionL{axis cs:65,0.398}
+% \FluidraFigurePositionM controls one location. Example: adjust either coordinate below to move it.
+\def\FluidraFigurePositionM{axis cs:85,0.347}
+% \FluidraFigurePositionN controls one location. Example: adjust either coordinate below to move it.
+\def\FluidraFigurePositionN{axis cs:85,0.3079975}
+% \FluidraFigurePositionO controls one location. Example: adjust either coordinate below to move it.
+\def\FluidraFigurePositionO{axis cs:82,0.350}
+\begin{document}
+\begin{tikzpicture}
+\FluidraFigureAxisA
+
+\FluidraFigurePlotA table[col sep=comma,x=trial_number,y=budget_3_op]
+    {fig6.10.csv};
+\addlegendentry{3 ports}
+
+\FluidraFigurePlotB table[col sep=comma,x=trial_number,y=budget_4_op]
+    {fig6.10.csv};
+\addlegendentry{4 ports}
+
+\FluidraFigurePlotC table[col sep=comma,x=trial_number,y=budget_5_op]
+    {fig6.10.csv};
+\addlegendentry{5 ports}
+
+\FluidraFigurePlotD table[col sep=comma,x=trial_number,y=budget_6_op]
+    {fig6.10.csv};
+\addlegendentry{6 ports}
+
+\FluidraFigurePlotE table[col sep=comma,x=trial_number,y=budget_7_op]
+    {fig6.10.csv};
+\addlegendentry{7 ports}
+
+\begin{pgfonlayer}{axis foreground}
+\FluidraFigurePathA
+    (\FluidraFigurePositionA) -- (\FluidraFigurePositionB);
+\FluidraFigureNodeA
+    at (\FluidraFigurePositionC) {Budget 7};
+
+\FluidraFigurePathB
+    (\FluidraFigurePositionD) -- (\FluidraFigurePositionE);
+\FluidraFigureNodeB
+    at (\FluidraFigurePositionF) {Budget 4};
+
+\FluidraFigurePathC
+    (\FluidraFigurePositionG) -- (\FluidraFigurePositionH);
+\FluidraFigureNodeC
+    at (\FluidraFigurePositionI) {Budget 5};
+
+\FluidraFigurePathD
+    (\FluidraFigurePositionJ) -- (\FluidraFigurePositionK);
+\FluidraFigureNodeD
+    at (\FluidraFigurePositionL) {Budget 3};
+
+\FluidraFigurePathE
+    (\FluidraFigurePositionM) -- (\FluidraFigurePositionN);
+\FluidraFigureNodeE
+    at (\FluidraFigurePositionO) {Budget 6};
+\end{pgfonlayer}
+
+\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,2 @@
+num_samples,n_observed_ports,ideal_op,ideal_n_outage_samples,ideal_op_std,observed_op,observed_n_outage_samples,observed_op_std,model_plus_observed_op,model_plus_observed_n_outage_samples,model_plus_observed_op_std,model_plus_observed_op_gap_from_ideal_pct,model_only_op,model_only_n_outage_samples,model_only_op_std,model_only_op_gap_from_ideal_pct,split,regime
+200000,5,0.01016,2032,0.1002834702231629,0.036225,7245,0.18684953672674706,0.01485,2970,0.12095237699193846,0.469,0.01485,2970,0.12095237699193846,0.469,val,kappa5_mu5_m50

@@ -1,0 +1,4 @@
+category,count,percentage
+relu,2,50.0
+tanh,1,25.0
+leaky_relu,1,25.0

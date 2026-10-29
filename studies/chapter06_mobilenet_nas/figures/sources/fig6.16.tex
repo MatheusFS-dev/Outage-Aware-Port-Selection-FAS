@@ -1,0 +1,85 @@
+% Generated PDF baseline(s):
+%   ../fig6.16.pdf
+% ============================================================================
+% EDITABLE FIGURE PARAMETERS
+% The document-class options below set the base font and cropped-page margin.
+% Example: change 12pt to 11pt for all inherited text, or border=2pt to
+% border=4pt for a larger white margin. Keep the current values to reproduce
+% the dissertation figure exactly.
+%
+% Colors declared with \definecolor and pre-existing \tikzset blocks are also
+% centralized appearance constants. Edit their values in this preamble only.
+% ============================================================================
+\documentclass[12pt,tikz,border=2pt]{standalone}
+
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+
+\usepackage{pgfplots}
+\usepackage{times}
+\pgfplotsset{compat=1.18}
+
+\definecolor{budgetthree}{HTML}{0072B2}
+\definecolor{budgetfour}{HTML}{D55E00}
+\definecolor{budgetfive}{HTML}{009E73}
+\definecolor{budgetsix}{HTML}{CC79A7}
+\definecolor{budgetseven}{HTML}{8C6D31}
+
+
+% --- Centralized render constants used by the figure body ---
+% Axis constants: dimensions, limits, ticks, labels, grids, and legend placement.
+% Example: inside an axis macro, change width=13.2cm to width=14cm or font=\normalsize to font=\small.
+\long\def\FluidraFigureAxisA{\begin{axis}[
+    width=15.2cm,
+    height=8.2cm,
+    xmin=1,
+    xmax=100,
+    xtick={1,25,50,75,100},
+    ymin=0.305,
+    ymax=0.405,
+    xlabel={Trial number},
+    ylabel={Best-so-far INT8 validation model-only OP},
+    axis x line*=bottom,
+    axis y line*=left,
+    tick align=outside,
+    tick label style={font=\normalsize},
+    label style={font=\normalsize},
+    grid=major,
+    major grid style={draw=gray!25,dashed,line width=0.3pt},
+    unbounded coords=jump,
+    legend style={
+        at={(0.5,1.02)},
+        anchor=south,
+        draw=none,
+        fill=white,
+        font=\normalsize,
+        legend columns=5
+    }
+]}
+% Dynamic plot constant: series color, dash style, and line width.
+% Example: change line width=1.5pt to line width=2pt to thicken every history line.
+\long\def\FluidraFigureHistoryPlot#1#2{\addplot[color=#1,#2,line width=1.5pt]}
+\begin{document}
+\begin{tikzpicture}
+\FluidraFigureAxisA
+\newcommand{\plothistory}[3]{
+    \FluidraFigureHistoryPlot{#2}{#3} table[
+        col sep=comma,
+        x expr={\thisrow{observed_ports}==#1 ? \thisrow{trial_number} : nan},
+        y=best_so_far_int8_op
+    ] {fig6.16.csv};
+}
+\plothistory{3}{budgetthree}{solid}
+\addlegendentry{$N=3$}
+\plothistory{4}{budgetfour}{dashed}
+\addlegendentry{$N=4$}
+\plothistory{5}{budgetfive}{densely dotted}
+\addlegendentry{$N=5$}
+\plothistory{6}{budgetsix}{dashdotted}
+\addlegendentry{$N=6$}
+\plothistory{7}{budgetseven}{loosely dashed}
+\addlegendentry{$N=7$}
+\end{axis}
+\end{tikzpicture}
+\end{document}

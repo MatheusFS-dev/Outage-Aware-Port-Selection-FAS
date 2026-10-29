@@ -1,0 +1,8 @@
+policy=mar
+budget=3
+train_seed=4
+parameters=75604
+epochs_completed=98
+selected_epoch=88
+best_val_loss=3.6658759117126474
+int8_tflite_size_bytes=261680

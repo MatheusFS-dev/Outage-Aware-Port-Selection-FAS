@@ -1,0 +1,36 @@
+{
+  "created_utc": "20261028T221649335490Z",
+  "python": "3.12.14",
+  "numpy": "2.5.1",
+  "scipy": "1.18.0",
+  "batch_size": 8192,
+  "quantity": "linear SNR",
+  "estimator": "Pearson correlation across sample rows",
+  "regimes": {
+    "kappa0_mu1_m50": {
+      "source": "C:\\Users\\mathe\\src\\projects\\FluiDRA\\src\\data\\kappa-mu_shadowed\\SNR_events_W1.0_U1_N100_kappa1.0e-16_mu1.0_m50.0.mat",
+      "source_bytes": 764411640,
+      "source_mtime_ns": 1739733295000000000,
+      "shape": [
+        1000000,
+        100
+      ],
+      "dtype": "float64",
+      "off_diagonal_lag_model_rmse": 0.0009716340582303769,
+      "off_diagonal_lag_model_max_abs_error": 0.003033717941701805
+    },
+    "kappa5_mu2_m2": {
+      "source": "C:\\Users\\mathe\\src\\projects\\FluiDRA\\src\\data\\kappa-mu_shadowed\\SNR_events_W1.0_U1_N100_kappa5.0e+00_mu2.0_m2.0.mat",
+      "source_bytes": 763797911,
+      "source_mtime_ns": 1740680321000000000,
+      "shape": [
+        1000000,
+        100
+      ],
+      "dtype": "float64",
+      "off_diagonal_lag_model_rmse": 0.08581428108851821,
+      "off_diagonal_lag_model_max_abs_error": 0.2196009153777313
+    }
+  },
+  "status": "complete"
+}

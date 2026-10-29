@@ -1,0 +1,63 @@
+\documentclass[12pt,tikz,border=2pt]{standalone}
+
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{plotmarks}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    width=13.2cm,
+    height=9.6cm,
+    xmin=2.75,
+    xmax=7.25,
+    xtick={3,4,5,6,7},
+    ymode=log,
+    log basis y=10,
+    % Raw OP values are mapped exactly onto a stable one-decade coordinate
+    % interval so the curves use the full panel even when all values are near 1.
+    ymin=1,
+    ymax=10,
+    ytick={1,1.77827941004,3.16227766017,5.6234132519,10},
+    yticklabels={0.1156,0.1492,0.1925,0.2484,0.3205},
+    xlabel={$N$},
+    ylabel={$P_{\mathrm{out}}$},
+    axis lines=box,
+    tick align=inside,
+    minor tick num=0,
+    tick style={black,line width=0.35pt},
+    tick label style={font=\normalsize},
+    label style={font=\normalsize},
+    grid=major,
+    major grid style={draw=gray!45,solid,line width=0.35pt},
+    legend style={at={(0.5,1.02)},anchor=south,draw=black,fill=white,
+        font=\normalsize,legend columns=4,column sep=5pt,
+        legend cell align={left},inner sep=3pt,row sep=-1pt}
+]
+\node[anchor=north east,draw=black,fill=white,inner sep=3pt,font=\normalsize]
+    at (rel axis cs:0.98,0.98) {$\kappa=5$, $\mu=2$, $m=2$};
+\addplot[black,solid,line width=0.9pt]
+    table[col sep=comma,x=observed_ports,y=ideal_op_plot]
+    {op_nas_selected_kappa5_mu2_m2.csv};
+\addlegendentry{Ideal}
+\addplot[black,solid,line width=0.9pt,mark=asterisk,mark size=2.4pt]
+    table[col sep=comma,x=observed_ports,y=observed_only_op_plot]
+    {op_nas_selected_kappa5_mu2_m2.csv};
+\addlegendentry{Observed only}
+\addplot[black,solid,line width=0.9pt,mark=pentagon,mark size=2.2pt,
+    mark options={solid,fill=white}]
+    table[col sep=comma,x=observed_ports,y=fp32_model_plus_observed_op_plot]
+    {op_nas_selected_kappa5_mu2_m2.csv};
+\addlegendentry{FP32}
+\addplot[black,dashed,line width=0.9pt,mark=square,mark size=2.0pt,
+    mark options={solid,fill=white}]
+    table[col sep=comma,x=observed_ports,y=int8_model_plus_observed_op_plot]
+    {op_nas_selected_kappa5_mu2_m2.csv};
+\addlegendentry{INT8}
+\end{axis}
+\end{tikzpicture}
+\end{document}

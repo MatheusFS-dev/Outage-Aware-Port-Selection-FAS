@@ -1,0 +1,2 @@
+artifact_type,split,regime,num_samples,n_observed_ports,ideal_op,ideal_n_outage_samples,ideal_op_std,observed_op,observed_n_outage_samples,observed_op_std,model_plus_observed_op,model_plus_observed_n_outage_samples,model_plus_observed_op_std,model_plus_observed_op_gap_from_ideal_pct,model_only_op,model_only_n_outage_samples,model_only_op_std,model_only_op_gap_from_ideal_pct
+int8_tflite,test,kappa5_mu2_m50,200000,3,0.03449,6898,0.18248408122354126,0.276155,55231,0.44709441505682,0.14439,28878,0.3514847477487465,10.99,0.154785,30957,0.3616996043334855,12.0295

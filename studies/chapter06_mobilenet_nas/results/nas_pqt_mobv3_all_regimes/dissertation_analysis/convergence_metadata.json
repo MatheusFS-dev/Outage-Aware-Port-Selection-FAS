@@ -1,0 +1,27 @@
+{
+  "completed_trials": 489,
+  "evidence_summary": {
+    "latest_selected_trial_number": 95,
+    "median_selected_trial_number": 65.0,
+    "minimum_hypervolume_percent_at_trial_50": 96.1808180847996,
+    "minimum_hypervolume_percent_at_trial_75": 99.0067648468471,
+    "minimum_scheduled_trials_after_selected": 5
+  },
+  "hypervolume": {
+    "best_op": 0.307799285714,
+    "best_ram_kib": 16.0,
+    "direction": "minimize_both",
+    "normalization": "global best to one fixed cross-study reference",
+    "objectives": [
+      "int8_validation_op",
+      "trained_peak_ram_kib"
+    ],
+    "reference_margin_fraction_of_global_range": 0.05,
+    "reference_op": 0.42025353571475,
+    "reference_ram_kib": 87.35078125
+  },
+  "incomplete_trial_treatment": "excluded from cumulative feasible sets",
+  "incomplete_trials": 11,
+  "scheduled_trials_per_study": 100,
+  "scope": "five MobileNetV3 all-regime NAS studies"
+}

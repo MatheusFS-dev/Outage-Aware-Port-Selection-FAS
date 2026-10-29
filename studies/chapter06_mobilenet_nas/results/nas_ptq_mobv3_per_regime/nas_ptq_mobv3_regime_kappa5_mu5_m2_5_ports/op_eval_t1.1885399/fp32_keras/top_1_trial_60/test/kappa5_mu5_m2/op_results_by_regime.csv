@@ -1,0 +1,2 @@
+artifact_type,rank,trial_id,split,regime,num_samples,n_observed_ports,ideal_op,ideal_n_outage_samples,ideal_op_std,observed_op,observed_n_outage_samples,observed_op_std,model_plus_observed_op,model_plus_observed_n_outage_samples,model_plus_observed_op_std,model_plus_observed_op_gap_from_ideal_pct,model_only_op,model_only_n_outage_samples,model_only_op_std,model_only_op_gap_from_ideal_pct
+fp32_keras,1,60,test,kappa5_mu5_m2,200000,5,0.09566,19132,0.2941244029318207,0.13519,27038,0.34192640129127205,0.10092,20184,0.3012227640800077,0.526,0.10092,20184,0.3012227640800077,0.526

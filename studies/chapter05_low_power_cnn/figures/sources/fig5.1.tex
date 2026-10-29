@@ -1,0 +1,14 @@
+% Build from this directory: env extra_mem_top=20000000 extra_mem_bot=20000000 pdflatex fig5.1.tex
+\documentclass[tikz,border=3pt]{standalone}
+\usepackage{newtxtext,newtxmath}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots,fillbetween}
+\pgfplotsset{compat=1.18,every axis/.append style={font=\large,label style={font=\Large},tick label style={font=\large},title style={font=\large}}}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 1,horizontal sep=1.5cm},width=7.6cm,height=7.6cm,view={0}{90},xmin=1,xmax=100,ymin=1,ymax=100,xlabel={Port index $i$},ylabel={Port index $j$},point meta min=-0.35,point meta max=1,colormap/viridis]
+\nextgroupplot[title={$\kappa\approx0,\ \mu=1,\ m=50$}]
+\addplot3[surf,shader=flat corner,mesh/rows=100] table[x=i,y=j,z=correlation]{spatial_matrix_kappa0_mu1_m50.dat};
+\nextgroupplot[title={$\kappa=5,\ \mu=2,\ m=2$},colorbar,colorbar style={ylabel={Pearson correlation},ytick={-0.3,0,0.5,1}}]
+\addplot3[surf,shader=flat corner,mesh/rows=100] table[x=i,y=j,z=correlation]{spatial_matrix_kappa5_mu2_m2.dat};
+\end{groupplot}\end{tikzpicture}\end{document}

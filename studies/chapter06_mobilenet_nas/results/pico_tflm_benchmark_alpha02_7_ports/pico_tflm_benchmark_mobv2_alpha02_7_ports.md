@@ -1,0 +1,26 @@
+Pico W TFLM dummy benchmark with INA219
+boot_status=stdio_ready
+benchmark_stage=ina219_init
+ina219_stage=i2c_init_complete
+ina219_stage=gpio_setup_complete
+ina219_stage=config_write_begin
+ina219_config_write_result=3
+ina219_enabled=1
+ina219_i2c_port=i2c0
+ina219_address=0x40
+ina219_sda_pin=4
+ina219_scl_pin=5
+ina219_i2c_baudrate_hz=100000
+ina219_shunt_micro_ohms=100000
+ina219_status=ok
+ina219_initial_bus_mV=5020
+ina219_initial_shunt_uV=2160
+ina219_initial_current_uA=21600
+ina219_initial_power_uW=108432
+ina219_initial_conversion_ready=1
+ina219_initial_overflow=0
+benchmark_stage=tflm_init
+benchmark_stage=operator_resolver_setup
+benchmark_stage=allocate_tensors
+Failed to resize buffer. Requested: 110624, available 101076, missing: 9548
+allocate_tensors_failed increase_kTensorArenaSize_or_check_ops

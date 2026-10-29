@@ -1,0 +1,4 @@
+category,count,percentage
+MinMaxScaler_0_1,20,55.55555555555556
+StandardScaler,15,41.66666666666667
+MinMaxScaler_-1_1,1,2.7777777777777777

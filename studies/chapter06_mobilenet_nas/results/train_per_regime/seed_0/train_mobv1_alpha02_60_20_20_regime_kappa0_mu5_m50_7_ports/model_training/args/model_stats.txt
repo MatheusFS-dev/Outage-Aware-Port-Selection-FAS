@@ -1,0 +1,9 @@
+variant_name=mobv1_alpha02
+method_name=mobv1_alpha02_gn_safe_selector
+decision_model_parameters=104356
+explorer_model_parameters=104356
+epochs_completed=100
+selected_epoch=55
+inference_training_max_abs_difference=0.0
+reload_max_abs_difference=0.0
+reload_decision_change_rate=0.0

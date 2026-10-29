@@ -1,0 +1,9 @@
+kappa0_mu1_m50_test_idealOP: 0.03678899999999996
+kappa0_mu2_m50_test_idealOP: 0.010692000000000035
+kappa0_mu5_m50_test_idealOP: 0.0009289999999999576
+kappa5_mu1_m2_test_idealOP: 0.09157899999999997
+kappa5_mu2_m2_test_idealOP: 0.10142399999999996
+kappa5_mu5_m2_test_idealOP: 0.13148899999999997
+kappa5_mu1_m50_test_idealOP: 0.005035000000000012
+kappa5_mu2_m50_test_idealOP: 0.0010900000000000354
+kappa5_mu5_m50_test_idealOP: 9.999999999998899e-05

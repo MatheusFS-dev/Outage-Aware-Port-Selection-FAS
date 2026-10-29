@@ -1,0 +1,23 @@
+[project]
+name = "outage-aware-port-selection-fas"
+version = "0.1.0"
+description = "Dissertation companion code and results for outage-aware FAS port selection"
+requires-python = ">=3.12,<3.13"
+authors = [
+    {name = "Matheus Ferreira Silva"},
+    {name = "Pedro Marcio Raposo Pereira"},
+    {name = "Felipe Augusto Pereira de Figueiredo"},
+    {name = "Rausley Adriano Amaral de Souza"},
+]
+license = "Apache-2.0"
+dependencies = ["matplotlib", "numpy", "pandas", "scipy", "scikit-learn==1.8.0", "optuna", "optunahub", "optuna-integration", "tensorboard", "tensorflow[and-cuda]", "tensorflow-model-optimization", "pynvml", "ipynbname"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.pytest.ini_options]
+pythonpath = [".", "src"]
+testpaths = ["tests/mobilenet", "tests/test_extraction.py"]
+
+[tool.uv]
+environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]

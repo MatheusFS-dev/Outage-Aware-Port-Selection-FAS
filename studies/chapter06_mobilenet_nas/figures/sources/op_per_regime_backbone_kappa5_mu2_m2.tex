@@ -1,0 +1,79 @@
+\documentclass[12pt,tikz,border=2pt]{standalone}
+
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{plotmarks}
+\definecolor{uncertainty}{HTML}{B24C63}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    width=13.2cm,
+    height=9.6cm,
+    xmin=2.75,
+    xmax=7.25,
+    xtick={3,4,5,6,7},
+    ymode=log,
+    log basis y=10,
+    % Values are normalized before this native log axis so arbitrarily tight
+    % raw OP intervals remain exact without overflowing TeX dimensions.
+    ymin=1,
+    ymax=10,
+    ytick={1,1.77827941004,3.16227766017,5.6234132519,10},
+    yticklabels={0.1165,0.1501,0.1934,0.2491,0.3208},
+    xlabel={$N$},
+    ylabel={$P_{\mathrm{out}}$},
+    axis lines=box,
+    tick align=inside,
+    minor tick num=0,
+    tick style={black,line width=0.35pt},
+    tick label style={font=\normalsize},
+    label style={font=\normalsize},
+    grid=major,
+    major grid style={draw=gray!45,solid,line width=0.35pt},
+    legend style={at={(0.5,1.02)},anchor=south,draw=black,fill=white,
+        font=\normalsize,legend columns=3,column sep=5pt,
+        legend cell align={left},inner sep=3pt,row sep=-1pt}
+]
+\node[anchor=north east,draw=black,fill=white,inner sep=3pt,font=\normalsize]
+    at (rel axis cs:0.98,0.98) {$\kappa=5$, $\mu=2$, $m=2$};
+\addplot[black,dotted,line width=1.1pt,mark=none]
+    table[col sep=comma,x=observed_ports,y=ideal_op_plot]
+    {op_per_regime_backbone_kappa5_mu2_m2.csv};
+\addlegendentry{Ideal}
+\addplot[black,dashdotted,line width=1.1pt,mark=triangle,mark size=2.6pt,
+    mark options={solid,fill=white}]
+    table[col sep=comma,x=observed_ports,y=observed_only_op_plot]
+    {op_per_regime_backbone_kappa5_mu2_m2.csv};
+\addlegendentry{Observed only}
+\addplot[black,solid,line width=1.1pt,mark=pentagon,mark size=2.8pt,
+    mark options={solid,fill=white},error bars/.cd,y dir=both,y explicit,
+    error bar style={draw=uncertainty,line width=0.9pt},error mark options={draw=uncertainty,mark size=2.0pt}]
+    table[col sep=comma,x=observed_ports,y=mobilenet_v1_plot_op,
+        y error plus=mobilenet_v1_plot_error_plus,
+        y error minus=mobilenet_v1_plot_error_minus]
+    {op_per_regime_backbone_kappa5_mu2_m2.csv};
+\addlegendentry{MobileNetV1}
+\addplot[black,solid,line width=1.1pt,mark=asterisk,mark size=3.0pt,
+    error bars/.cd,y dir=both,y explicit,error bar style={draw=uncertainty,line width=0.9pt},
+    error mark options={draw=uncertainty,mark size=2.0pt}]
+    table[col sep=comma,x=observed_ports,y=mobilenet_v2_plot_op,
+        y error plus=mobilenet_v2_plot_error_plus,
+        y error minus=mobilenet_v2_plot_error_minus]
+    {op_per_regime_backbone_kappa5_mu2_m2.csv};
+\addlegendentry{MobileNetV2}
+\addplot[black,dashed,line width=1.1pt,mark=square,mark size=2.6pt,
+    mark options={solid,fill=white},error bars/.cd,y dir=both,y explicit,
+    error bar style={draw=uncertainty,line width=0.9pt},error mark options={draw=uncertainty,mark size=2.0pt}]
+    table[col sep=comma,x=observed_ports,y=mobilenet_v3_plot_op,
+        y error plus=mobilenet_v3_plot_error_plus,
+        y error minus=mobilenet_v3_plot_error_minus]
+    {op_per_regime_backbone_kappa5_mu2_m2.csv};
+\addlegendentry{MobileNetV3}
+\end{axis}
+\end{tikzpicture}
+\end{document}

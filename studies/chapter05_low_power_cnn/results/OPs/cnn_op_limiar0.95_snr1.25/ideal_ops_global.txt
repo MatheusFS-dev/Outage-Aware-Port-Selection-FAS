@@ -1,0 +1,15 @@
+kappa0_mu1_m0_test_idealOP: 0.07465888888888894
+kappa0_mu1_m2_test_idealOP: 0.07518777777777774
+kappa0_mu1_m50_test_idealOP: 0.07515666666666665
+kappa0_mu2_m50_test_idealOP: 0.0204766666666667
+kappa0_mu5_m50_test_idealOP: 0.0012011111111110973
+kappa5_mu1_m0_test_idealOP: 0.9111355555555556
+kappa5_mu1_m2_test_idealOP: 0.039483333333333315
+kappa5_mu1_m50_test_idealOP: 0.008571111111111085
+kappa5_mu2_m0_test_idealOP: 0.9491188888888888
+kappa5_mu2_m2_test_idealOP: 0.020427777777777822
+kappa5_mu2_m50_test_idealOP: 0.0008911111111110648
+kappa5_mu5_m0_test_idealOP: 0.9694166666666667
+kappa5_mu5_m2_test_idealOP: 0.010421111111111103
+kappa5_mu5_m50_test_idealOP: 1.333333333330966e-05
+Parameters:

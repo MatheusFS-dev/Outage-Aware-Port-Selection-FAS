@@ -1,0 +1,6 @@
+observed_ports,scheduled_trials,completed_trials,valid_trials,ram_penalized_trials,incomplete_trials,selected_trial,pareto_candidates,recorded_completed_duration_total_hours,completed_duration_median_minutes
+3,100,97,97,0,3,64,3,9.42052595083,5.72355246667
+4,100,98,98,0,2,94,2,6.40089959056,3.44353616667
+5,100,98,98,0,2,46,1,6.20833131222,3.26793384167
+6,100,98,98,0,2,84,2,6.18121715889,3.44300845
+7,100,98,98,0,2,38,2,6.16503683611,3.32687295833

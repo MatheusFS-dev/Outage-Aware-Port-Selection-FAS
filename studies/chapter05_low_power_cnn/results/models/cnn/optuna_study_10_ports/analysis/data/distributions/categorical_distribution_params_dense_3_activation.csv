@@ -1,0 +1,4 @@
+category,count,percentage
+leaky_relu,2,50.0
+elu,1,25.0
+sigmoid,1,25.0

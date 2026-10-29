@@ -1,0 +1,27 @@
+{
+  "tensorflow": "2.21.0",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+  "processor": "x86_64",
+  "physical_cpu": "Intel(R) Xeon(R) Gold 5220 CPU @ 2.20GHz",
+  "threads": 1,
+  "batch_size": 1,
+  "warmup": 25,
+  "blocks": 100,
+  "invocations_per_block": 10,
+  "backend": "strict INT8 TFLite CPU reference kernels, one thread, no GPU, default delegates disabled",
+  "weights": "random initialization, no training",
+  "observation_budgets": [
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "input": "fixed zero-valued vector quantized with each model input scale",
+  "calibration": "256 deterministic synthetic nonnegative rows spanning 0 to 10; conversion only, no accuracy claim",
+  "cnn_source": "WCNPS 2025 Table I budget-specific configurations, Conv1D same padding, max pooling same padding, flatten, linear 100-output head",
+  "mobilenet_source": "safe_selector.build_models, alpha 0.2 GroupNorm variants, compact decision model",
+  "model_size": "serialized strict-INT8 TFLite flatbuffer bytes",
+  "memory": "fresh spawned process per case; Linux VmRSS sampled every 1 ms from immediately before interpreter creation through allocation, warm-up, and 1000 timed-equivalent invocations"
+}

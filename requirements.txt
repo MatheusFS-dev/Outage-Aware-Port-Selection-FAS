@@ -1,0 +1,13 @@
+matplotlib
+numpy
+pandas
+scipy
+scikit-learn==1.8.0
+optuna
+optunahub
+optuna-integration
+tensorboard
+tensorflow[and-cuda]
+tensorflow-model-optimization
+pynvml
+ipynbname

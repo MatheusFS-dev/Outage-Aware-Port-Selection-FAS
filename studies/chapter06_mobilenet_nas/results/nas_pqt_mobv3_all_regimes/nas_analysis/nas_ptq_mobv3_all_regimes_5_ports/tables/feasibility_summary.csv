@@ -1,0 +1,2 @@
+completed_trial_count,valid_trial_count,ram_violating_trial_count,penalty_trial_count,conversion_failure_count,best_feasible_qt_val_metric,best_feasible_ram_kib
+98,98,0,0,0,0.31422964285714283,16.0

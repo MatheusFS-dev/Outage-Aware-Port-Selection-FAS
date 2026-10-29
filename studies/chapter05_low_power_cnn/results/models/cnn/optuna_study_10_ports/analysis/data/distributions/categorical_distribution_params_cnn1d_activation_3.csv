@@ -1,0 +1,4 @@
+category,count,percentage
+elu,12,70.58823529411765
+leaky_relu,3,17.647058823529413
+relu,2,11.76470588235294

@@ -1,0 +1,103 @@
+% Generated PDF baseline(s):
+%   ../figB.1.pdf
+% ============================================================================
+% EDITABLE FIGURE PARAMETERS
+% The document-class options below set the base font and cropped-page margin.
+% Example: change 12pt to 11pt for all inherited text, or border=2pt to
+% border=4pt for a larger white margin. Keep the current values to reproduce
+% the dissertation figure exactly.
+%
+% Colors declared with \definecolor and pre-existing \tikzset blocks are also
+% centralized appearance constants. Edit their values in this preamble only.
+% ============================================================================
+\documentclass[12pt,tikz,border=2pt]{standalone}
+
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+
+\usepackage{pgfplots}
+\usepackage{times}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{compat=1.18}
+
+\definecolor{rangefill}{HTML}{B8D9EB}
+\definecolor{quartilefill}{HTML}{56B4E9}
+\definecolor{mediancolor}{HTML}{0072B2}
+
+
+% --- Centralized render constants used by the figure body ---
+% Axis constants: dimensions, limits, ticks, labels, grids, and legend placement.
+% Example: inside an axis macro, change width=13.2cm to width=14cm or font=\normalsize to font=\small.
+\long\def\FluidraFigureAxisA{\begin{axis}[
+    width=15.2cm,
+    height=8.2cm,
+    xmin=2.8,
+    xmax=7.2,
+    ymin=0.30,
+    ymax=0.42,
+    xtick={3,4,5,6,7},
+    ytick={0.30,0.32,0.34,0.36,0.38,0.40,0.42},
+    xlabel={Number of observed ports, $N$},
+    ylabel={INT8 validation model-only OP},
+    axis x line*=bottom,
+    axis y line*=left,
+    tick align=outside,
+    tick label style={font=\normalsize},
+    label style={font=\normalsize},
+    grid=major,
+    major grid style={draw=gray!25,dashed,line width=0.3pt},
+    legend style={
+        at={(0.5,1.03)},
+        anchor=south,
+        draw=none,
+        fill=none,
+        font=\normalsize,
+        legend columns=3,
+        column sep=8pt
+    }
+]}
+
+% Plot constants: colors, line patterns, line widths, markers, and error bars.
+% Example: inside a plot macro, change line width=1.1pt to 1.5pt or mark size=2.6pt to 3pt.
+\long\def\FluidraFigurePlotA{\addplot[forget plot,name path=minimum,draw=none]}
+\long\def\FluidraFigurePlotB{\addplot[forget plot,name path=maximum,draw=none]}
+\long\def\FluidraFigurePlotC{\addplot[forget plot,rangefill,opacity=0.55]}
+\long\def\FluidraFigurePlotD{\addplot[forget plot,name path=lowerquartile,draw=none]}
+\long\def\FluidraFigurePlotE{\addplot[forget plot,name path=upperquartile,draw=none]}
+\long\def\FluidraFigurePlotF{\addplot[forget plot,quartilefill,opacity=0.65]}
+\long\def\FluidraFigurePlotG{\addplot[forget plot,mediancolor,line width=1.4pt,mark=*,mark size=2.2pt]}
+\begin{document}
+\begin{tikzpicture}
+\FluidraFigureAxisA
+\FluidraFigurePlotA table[
+    col sep=comma,x=observed_ports,y=min_op
+] {figB.1.csv};
+\FluidraFigurePlotB table[
+    col sep=comma,x=observed_ports,y=max_op
+] {figB.1.csv};
+\FluidraFigurePlotC
+    fill between[of=minimum and maximum];
+
+\FluidraFigurePlotD table[
+    col sep=comma,x=observed_ports,y=q1_op
+] {figB.1.csv};
+\FluidraFigurePlotE table[
+    col sep=comma,x=observed_ports,y=q3_op
+] {figB.1.csv};
+\FluidraFigurePlotF fill between[
+    of=lowerquartile and upperquartile
+];
+
+\FluidraFigurePlotG table[
+    col sep=comma,x=observed_ports,y=median_op
+] {figB.1.csv};
+\addlegendimage{only marks,mark=square*,mark size=4pt,color=rangefill,opacity=0.55}
+\addlegendentry{Minimum--maximum}
+\addlegendimage{only marks,mark=square*,mark size=4pt,color=quartilefill,opacity=0.65}
+\addlegendentry{Interquartile range}
+\addlegendimage{mediancolor,line width=1.4pt,mark=*,mark size=2.2pt}
+\addlegendentry{Median}
+\end{axis}
+\end{tikzpicture}
+\end{document}

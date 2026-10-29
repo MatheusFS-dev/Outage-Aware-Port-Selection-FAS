@@ -1,0 +1,9 @@
+Parameter,Category,Fraction,Count
+params_cnn1d_activation_0,relu,0.8,8
+params_cnn1d_activation_0,swish,0.2,2
+params_cnn1d_activation_1,elu,0.6,6
+params_cnn1d_activation_1,swish,0.2,2
+params_cnn1d_activation_1,leaky_relu,0.2,2
+params_cnn1d_use_batch_norm_1,False,1.0,10
+params_optimizer,AdamW,1.0,10
+params_scaler,StandardScaler,1.0,10

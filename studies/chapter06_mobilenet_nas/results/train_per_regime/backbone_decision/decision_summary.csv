@@ -1,0 +1,2 @@
+training_scope,winner_backbone,winner_macro_avg_normalized_op_gap,winner_worst_regime_normalized_op_gap,reason
+per_regime,mobv1,0.17680163015309547,0.6216216182614075,"mobv1 wins because it has the lowest macro-average normalized OP gap (0.176802) for per_regime training, with worst-regime gap 0.621622."

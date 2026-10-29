@@ -1,0 +1,37 @@
+# Private channel datasets and runtime caches
+/data/*
+!/data/README.md
+**/data/w1_u1_n100/
+# Environments, credentials and editor files
+.venv/
+.venv-win/
+.env
+.env.*
+!.env.example
+credentials.json
+.vscode/
+.idea/
+# Python and temporary verification artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.sdd-workspace/
+# Intermediate execution products, retained results live in chapter results/
+**/runs/
+**/tensorboard/
+**/logs/
+**/build/
+**/temp/
+**/checkpoints/
+*.log
+*.db-shm
+*.db-wal
+# LaTeX compilation artifacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.toc
+*.out

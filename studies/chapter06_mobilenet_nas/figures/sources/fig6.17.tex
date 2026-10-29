@@ -1,0 +1,77 @@
+% Generated PDF baseline(s):
+%   ../fig6.17.pdf
+% ============================================================================
+% EDITABLE FIGURE PARAMETERS
+% The document-class options below set the base font and cropped-page margin.
+% Example: change 12pt to 11pt for all inherited text, or border=2pt to
+% border=4pt for a larger white margin. Keep the current values to reproduce
+% the dissertation figure exactly.
+%
+% Colors declared with \definecolor and pre-existing \tikzset blocks are also
+% centralized appearance constants. Edit their values in this preamble only.
+% ============================================================================
+\documentclass[12pt,tikz,border=2pt]{standalone}
+
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{plotmarks}
+
+
+% --- Centralized render constants used by the figure body ---
+% Axis constants: dimensions, limits, ticks, labels, grids, and legend placement.
+% Example: inside an axis macro, change width=13.2cm to width=14cm or font=\normalsize to font=\small.
+\long\def\FluidraFigureAxisA{\begin{axis}[
+    width=13.2cm,
+    height=9.6cm,
+    xmin=2.75,
+    xmax=7.25,
+    xtick={3,4,5,6,7},
+    ymin=0.29,
+    ymax=0.38,
+    xlabel={$N$},
+    ylabel={$P_{\mathrm{out}}$},
+    axis lines=box,
+    tick align=inside,
+    tick style={black,line width=0.35pt},
+    tick label style={font=\normalsize},
+    label style={font=\normalsize},
+    grid=major,
+    major grid style={draw=gray!45,solid,line width=0.35pt},
+    legend style={
+        at={(0.5,1.02)},
+        anchor=south,
+        draw=black,
+        fill=white,
+        font=\normalsize,
+        legend columns=2,
+        column sep=5pt,
+        legend cell align={left},
+        inner sep=3pt,
+        row sep=-1pt
+    }
+]}
+
+% Plot constants: colors, line patterns, line widths, markers, and error bars.
+% Example: inside a plot macro, change line width=1.1pt to 1.5pt or mark size=2.6pt to 3pt.
+\long\def\FluidraFigurePlotA{\addplot[black,solid,line width=0.9pt,mark=pentagon,mark size=2.2pt,
+    mark options={solid,fill=white}]}
+\long\def\FluidraFigurePlotB{\addplot[black,dashed,line width=0.9pt,mark=square,mark size=2.0pt,
+    mark options={solid,fill=white}]}
+\begin{document}
+\begin{tikzpicture}
+\FluidraFigureAxisA
+\FluidraFigurePlotA
+table[col sep=comma,x=observed_ports,y=fp32_validation_op]
+{fig6.17.csv};
+\addlegendentry{FP32}
+\FluidraFigurePlotB
+table[col sep=comma,x=observed_ports,y=int8_validation_op]
+{fig6.17.csv};
+\addlegendentry{INT8}
+\end{axis}
+\end{tikzpicture}
+\end{document}

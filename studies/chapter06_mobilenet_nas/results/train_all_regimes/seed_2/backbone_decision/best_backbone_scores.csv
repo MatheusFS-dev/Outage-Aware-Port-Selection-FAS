@@ -1,0 +1,4 @@
+backbone,training_scope,macro_avg_normalized_op_gap,worst_regime_normalized_op_gap,mean_validation_model_op,model_size,ram,latency,final_rank
+mobv2,all_regimes,0.15868728737918755,0.40013443441328916,0.3162485714285714,1650274.0,,,1
+mobv1,all_regimes,0.15900704647667596,0.3994622623372409,0.31619142857142857,678733.0,,,2
+mobv3,all_regimes,0.1602228147121063,0.3983099673497297,0.3162342857142857,853759.0,,,3

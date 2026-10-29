@@ -1,0 +1,9 @@
+fireducks # or pandas
+ipython
+numpy
+seaborn
+scipy
+matplotlib
+tensorflow
+scikit-learn
+optuna

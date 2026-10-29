@@ -1,0 +1,2 @@
+parameter,conservative_min,conservative_max,aggressive_min,aggressive_max,best_median,all_trials_count,best_trials_count
+params_learning_rate,0.005106282250444268,0.00784414218591248,0.0006101797289108019,0.008611174838292034,0.006952648174457151,53,10

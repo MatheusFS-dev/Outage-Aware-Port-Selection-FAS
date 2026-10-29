@@ -1,0 +1,19 @@
+\documentclass[tikz,border=3pt]{standalone}
+\usepackage{newtxtext,newtxmath}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots,fillbetween}
+\pgfplotsset{compat=1.18,every axis/.append style={font=\large,label style={font=\Large},tick label style={font=\large},title style={font=\large}}}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 1,horizontal sep=1.8cm},width=8cm,height=7cm,xmin=1,xmax=99,ymin=-0.35,ymax=1.02,xlabel={Separation $d$ [ports]},ylabel={Pearson correlation},axis lines=left,legend style={draw=none,font=\large,at={(0.98,0.98)},anchor=north east},legend cell align=left]
+\nextgroupplot[title={$\kappa\approx0,\ \mu=1,\ m=50$}]
+\addplot[name path=lo0,draw=none,forget plot] table[col sep=comma,x=separation_ports,y=min]{spatial_separation_kappa0_mu1_m50.csv};
+\addplot[name path=hi0,draw=none,forget plot] table[col sep=comma,x=separation_ports,y=max]{spatial_separation_kappa0_mu1_m50.csv};
+\addplot[fill=blue!16,draw=none] fill between[of=lo0 and hi0];\addlegendentry{Min--max}
+\addplot[blue!65!black,thick] table[col sep=comma,x=separation_ports,y=mean]{spatial_separation_kappa0_mu1_m50.csv};\addlegendentry{Mean}
+\nextgroupplot[title={$\kappa=5,\ \mu=2,\ m=2$}]
+\addplot[name path=lo1,draw=none,forget plot] table[col sep=comma,x=separation_ports,y=min]{spatial_separation_kappa5_mu2_m2.csv};
+\addplot[name path=hi1,draw=none,forget plot] table[col sep=comma,x=separation_ports,y=max]{spatial_separation_kappa5_mu2_m2.csv};
+\addplot[fill=blue!16,draw=none] fill between[of=lo1 and hi1];\addlegendentry{Min--max}
+\addplot[blue!65!black,thick] table[col sep=comma,x=separation_ports,y=mean]{spatial_separation_kappa5_mu2_m2.csv};\addlegendentry{Mean}
+\end{groupplot}\end{tikzpicture}\end{document}

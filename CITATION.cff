@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this dissertation companion software, please cite this repository."
+type: software
+title: "Outage-Aware Port Selection for Fluid Antenna Systems: Dissertation Companion"
+authors:
+  - family-names: Ferreira Silva
+    given-names: Matheus
+  - family-names: Raposo Pereira
+    given-names: Pedro Marcio
+  - family-names: de Figueiredo
+    given-names: Felipe Augusto Pereira
+  - family-names: de Souza
+    given-names: Rausley Adriano Amaral
+repository-code: "https://github.com/MatheusFS-dev/Outage-Aware-Port-Selection-FAS"
+url: "https://github.com/MatheusFS-dev/Outage-Aware-Port-Selection-FAS"
+license: Apache-2.0
+keywords:
+  - fluid antenna systems
+  - port selection
+  - outage probability
+  - neural architecture search
+  - dissertation

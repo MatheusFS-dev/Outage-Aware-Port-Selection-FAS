@@ -1,0 +1,87 @@
+% Generated PDF baseline(s):
+%   ../fig6.11.pdf
+% ============================================================================
+% EDITABLE FIGURE PARAMETERS
+% The document-class options below set the base font and cropped-page margin.
+% Example: change 12pt to 11pt for all inherited text, or border=2pt to
+% border=4pt for a larger white margin. Keep the current values to reproduce
+% the dissertation figure exactly.
+%
+% Colors declared with \definecolor and pre-existing \tikzset blocks are also
+% centralized appearance constants. Edit their values in this preamble only.
+% ============================================================================
+\documentclass[12pt,tikz,border=2pt]{standalone}
+
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{plotmarks}
+
+
+% --- Centralized render constants used by the figure body ---
+% Axis constants: dimensions, limits, ticks, labels, grids, and legend placement.
+% Example: inside an axis macro, change width=13.2cm to width=14cm or font=\normalsize to font=\small.
+\long\def\FluidraFigureAxisA{\begin{axis}[
+    width=13.2cm,
+    height=9.6cm,
+    xmin=2.75,
+    xmax=7.25,
+    ymin=-0.0002,
+    ymax=0.0002,
+    xtick={3,4,5,6,7},
+    ytick={-0.0002,-0.0001,0,0.0001,0.0002},
+    yticklabels={$-2.0\times10^{-4}$,$-1.0\times10^{-4}$,0,
+        $1.0\times10^{-4}$,$2.0\times10^{-4}$},
+    scaled y ticks=false,
+    xlabel={$N$},
+    ylabel={$P_{\mathrm{out}}^{\mathrm{V3}}-P_{\mathrm{out}}^{\mathrm{V1}}$},
+    axis lines=box,
+    tick align=inside,
+    minor tick num=0,
+    tick style={black,line width=0.35pt},
+    tick label style={font=\normalsize},
+    label style={font=\normalsize},
+    grid=major,
+    major grid style={draw=gray!45,solid,line width=0.35pt},
+    axis on top,
+    legend style={at={(0.5,1.02)},anchor=south,draw=black,fill=white,
+        font=\normalsize,legend columns=2,column sep=8pt,
+        legend cell align={left},inner sep=3pt,row sep=-1pt}
+]}
+
+% Plot constants: colors, line patterns, line widths, markers, and error bars.
+% Example: inside a plot macro, change line width=1.1pt to 1.5pt or mark size=2.6pt to 3pt.
+\long\def\FluidraFigurePlotA{\addplot[black,dotted,line width=1.1pt,mark=none,forget plot]}
+\long\def\FluidraFigurePlotB{\addplot[black,solid,line width=1.1pt,mark=pentagon,mark size=2.8pt,
+    mark options={solid,fill=white},error bars/.cd,y dir=both,y explicit,
+    error bar style={line width=0.6pt},error mark options={mark size=1.8pt}]}
+
+% Path constants: arrow shape, color, dash pattern, and stroke width.
+% Example: inside a path macro, change line width=0.8pt to 1pt or >=Latex to >=Stealth.
+\long\def\FluidraFigurePathA{\path[draw=none,fill=gray!15]}
+
+% Position constants: absolute or axis-relative locations for annotations and paths.
+% \FluidraFigurePositionA controls one location. Example: adjust either coordinate below to move it.
+\def\FluidraFigurePositionA{axis cs:2.75,-0.0001}
+% \FluidraFigurePositionB controls one location. Example: adjust either coordinate below to move it.
+\def\FluidraFigurePositionB{axis cs:7.25,0.0001}
+\begin{document}
+\begin{tikzpicture}
+\FluidraFigureAxisA
+\FluidraFigurePathA
+    (\FluidraFigurePositionA) rectangle (\FluidraFigurePositionB);
+\addlegendimage{area legend,draw=gray!55,fill=gray!15}
+\addlegendentry{$\pm10^{-4}$ margin}
+\FluidraFigurePlotA
+    coordinates {(2.75,0) (7.25,0)};
+\FluidraFigurePlotB
+    table[col sep=comma,x=observed_ports,y=mean_difference,
+        y error plus=error_plus,y error minus=error_minus]
+    {fig6.11.csv};
+\addlegendentry{MobileNetV3 $-$ MobileNetV1}
+\end{axis}
+\end{tikzpicture}
+\end{document}

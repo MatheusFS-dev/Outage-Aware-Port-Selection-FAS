@@ -1,0 +1,4 @@
+category,count,percentage
+elu,2,50.0
+relu,1,25.0
+swish,1,25.0

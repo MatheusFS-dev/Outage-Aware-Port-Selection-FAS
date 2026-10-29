@@ -1,0 +1,79 @@
+% Combined Chapter 8 policy radar, using the geometry of Figure C.47.
+\RequirePackage{fix-cm}
+\documentclass[12pt,tikz,border=4pt]{standalone}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{times}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{polar}
+\definecolor{unicolor}{HTML}{0072B2}
+\definecolor{marcolor}{HTML}{D55E00}
+\definecolor{gccolor}{HTML}{009E73}
+\pgfplotstableread[col sep=comma]{\radardatafile}\radardata
+\begin{document}
+\begin{tikzpicture}
+\begin{polaraxis}[
+    width=18.42903cm,
+    height=18.42903cm,
+    ymin=0,
+    ymax=1,
+    ytick={0,0.2,0.4,0.6,0.8,1.0},
+    yticklabels={$0$,$0.2$,$0.4$,$0.6$,$0.8$,$1.0$},
+    xtick={0,25.7142857,51.4285714,77.1428571,102.8571429,128.5714286,154.2857143,180,205.7142857,231.4285714,257.1428571,282.8571429,308.5714286,334.2857143},
+    xticklabels={
+        {Rayleigh, severe\\shadowing\\$\kappa\!\rightarrow\!0,\ \mu=1,\ m\!\rightarrow\!0$},
+        {Rayleigh, moderate\\shadowing\\$\kappa\!\rightarrow\!0,\ \mu=1,\ m=2$},
+        {Rayleigh\\$\kappa\!\rightarrow\!0,\ \mu=1,\ m\!\rightarrow\!\infty$},
+        {\hspace{20pt}Nakagami\\\hspace{20pt}$\kappa\!\rightarrow\!0,\ \mu=2,\ m\!\rightarrow\!\infty$},
+        {Nakagami\hspace{20pt}\\$\kappa\!\rightarrow\!0,\ \mu=5,\ m\!\rightarrow\!\infty$\hspace{20pt}},
+        {Rician, severe\\shadowing\\$\kappa=5,\ \mu=1,\ m\!\rightarrow\!0$},
+        {Rician, moderate\\shadowing\\$\kappa=5,\ \mu=1,\ m=2$},
+        {Rician\\$\kappa=5,\ \mu=1,\ m\!\rightarrow\!\infty$},
+        {$\kappa$--$\mu$, severe\\shadowing\\$\kappa=5,\ \mu=2,\ m\!\rightarrow\!0$},
+        {$\kappa$--$\mu$, moderate\\shadowing\\$\kappa=5,\ \mu=2,\ m=2$},
+        {$\kappa$--$\mu$\\$\kappa=5,\ \mu=2,\ m\!\rightarrow\!\infty$},
+        {$\kappa$--$\mu$, severe\\shadowing\\$\kappa=5,\ \mu=5,\ m\!\rightarrow\!0$},
+        {$\kappa$--$\mu$, moderate\\shadowing\\$\kappa=5,\ \mu=5,\ m=2$},
+        {$\kappa$--$\mu$\\$\kappa=5,\ \mu=5,\ m\!\rightarrow\!\infty$}
+    },
+    tick align=outside,
+    tick style={black,line width=0.35pt},
+    xticklabel shift=8pt,
+    xticklabel style={font=\fontsize{11.5}{13.8}\selectfont,align=center,inner sep=4pt},
+    yticklabel style={font=\fontsize{13}{15.6}\selectfont},
+    grid=both,
+    major grid style={draw=gray!32,dashed,line width=0.3pt},
+    minor grid style={draw=none},
+    axis line style={draw=gray!55,line width=0.45pt},
+    clip=false,
+    legend style={at={(0.5,1.14)},anchor=south,draw=black,fill=white,
+        font=\normalsize,legend columns=4,column sep=5pt,inner sep=3pt,
+        row sep=-1pt}
+]
+\addplot[black,solid,line width=1.2pt]
+    table[x expr=\coordindex*360/14,y=ideal] {\radardata};
+\addlegendentry{Ideal}
+\addplot[unicolor,dashed,line width=1.0pt]
+    table[x expr=\coordindex*360/14,y=uni_observed] {\radardata};
+\addlegendentry{UNI observed only}
+\addplot[marcolor,dashed,line width=1.0pt]
+    table[x expr=\coordindex*360/14,y=mar_observed] {\radardata};
+\addlegendentry{MAR observed only}
+\addplot[gccolor,dashed,line width=1.0pt]
+    table[x expr=\coordindex*360/14,y=gc_observed] {\radardata};
+\addlegendentry{GC observed only}
+\addplot[unicolor,solid,line width=1.8pt]
+    table[x expr=\coordindex*360/14,y=uni] {\radardata};
+\addlegendentry{UNI model only}
+\addplot[marcolor,solid,line width=1.8pt]
+    table[x expr=\coordindex*360/14,y=mar] {\radardata};
+\addlegendentry{MAR model only}
+\addplot[gccolor,solid,line width=1.8pt]
+    table[x expr=\coordindex*360/14,y=gc] {\radardata};
+\addlegendentry{GC model only}
+\end{polaraxis}
+\end{tikzpicture}
+\end{document}

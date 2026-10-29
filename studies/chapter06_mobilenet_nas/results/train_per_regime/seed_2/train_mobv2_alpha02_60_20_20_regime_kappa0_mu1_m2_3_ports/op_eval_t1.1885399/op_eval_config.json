@@ -1,0 +1,37 @@
+{
+  "alpha": 0.2,
+  "backbone_family": "MobileNetV2",
+  "batch_size": 256,
+  "data_seed": 0,
+  "enabled_split_names": [
+    "val"
+  ],
+  "evaluate_only_trained_regimes": true,
+  "evaluate_test_split": false,
+  "evaluate_train_split": false,
+  "evaluate_val_split": true,
+  "input_shape": [
+    32,
+    32,
+    3
+  ],
+  "model_path": "/home/matheus/src/FluiDRA/src/mobilenet/keras/split_60_20_20/train/runs/train_per_regime/seed_2/train_mobv2_alpha02_60_20_20_regime_kappa0_mu1_m2_3_ports/model_training/model/model.keras",
+  "num_observed_ports": 3,
+  "output_dir": "/home/matheus/src/FluiDRA/src/mobilenet/keras/split_60_20_20/train/runs/train_per_regime/seed_2/train_mobv2_alpha02_60_20_20_regime_kappa0_mu1_m2_3_ports/op_eval_t1.1885399",
+  "regime_labels": [
+    "kappa0_mu1_m2"
+  ],
+  "samples_per_regime": null,
+  "scaler_x_path": "/home/matheus/src/FluiDRA/src/mobilenet/keras/split_60_20_20/train/runs/train_per_regime/seed_2/train_mobv2_alpha02_60_20_20_regime_kappa0_mu1_m2_3_ports/model_training/scaler/scaler_X.pkl",
+  "scaler_y_path": "/home/matheus/src/FluiDRA/src/mobilenet/keras/split_60_20_20/train/runs/train_per_regime/seed_2/train_mobv2_alpha02_60_20_20_regime_kappa0_mu1_m2_3_ports/model_training/scaler/scaler_y.pkl",
+  "snr_linear": 1.0,
+  "split_mode": "60_20_20",
+  "test_ratio": 0.2,
+  "threshold": 1.1885398626327515,
+  "total_ports": 100,
+  "train_ratio": 0.6,
+  "train_run_dir": "/home/matheus/src/FluiDRA/src/mobilenet/keras/split_60_20_20/train/runs/train_per_regime/seed_2/train_mobv2_alpha02_60_20_20_regime_kappa0_mu1_m2_3_ports",
+  "unused_ratio": 0.0,
+  "val_ratio": 0.2,
+  "variant_name": "mobv2_alpha02"
+}
